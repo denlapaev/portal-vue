@@ -15,7 +15,7 @@ export class Wormhole {
 
     transport.passengers = freeze(passengers)
     const keys = Object.keys(this.transports)
-    if (keys.includes(to)) {
+    if (keys.indexOf(to) >= 0) {
       this.transports[to] = transport
     } else {
       Vue.set(this.transports, to, transport)
